@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'registering to the site' do
+  scenario 'user clicks register link and sees registration' do
+    visit '/'
+    click_link "Register"
+    expect(page).to have_content "Registration"
+  end
+
   scenario 'user clicks register link and can create a new account' do
     visit '/'
     click_link "Register"
