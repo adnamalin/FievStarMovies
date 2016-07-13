@@ -2,6 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :movie
   belongs_to :reviewer, class_name: "User"
   has_many :ratings, as: :rateable
+  has_many :comments
 
   validates :body, presence: true
   validates :reviewer_id, presence: true
