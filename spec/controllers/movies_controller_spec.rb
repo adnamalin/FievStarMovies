@@ -2,15 +2,9 @@ require 'rails_helper'
 
 describe MoviesController do
   describe "GET #show" do
-    it "responds with status code 200" do
-      get :show, {:movie_id => 1}
-      expect(response).to be_success
-      expect(response).to have_http_status(200)
-    end
-
-    it "renders whatever is on movie_reviews_path" do
-      get :show, {:movie_id => 1}
-      expect(response).to render_template(:'reviews#index')
+    it "redirects to movies/id/reviews" do
+      get :show, {:id => 1}
+      expect(response).to redirect_to(movie_reviews_path(1))
     end
   end
 end

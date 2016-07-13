@@ -1,15 +1,6 @@
 require 'rails_helper'
 
 describe ReviewsController do
-  before(:each) do
-    movie = Movie.create!(title: "The Titanic")
-    review = Review.new(title: "It was okay", body: "somebody", reviewer_id: 1)
-    review.movie = movie
-    review.save!
-
-    User.create!(username: "vi")
-  end
-
   describe "GET #index" do
     it "responds with status code 200" do
       get :index, {:movie_id => 1}
@@ -19,7 +10,7 @@ describe ReviewsController do
 
     it "assigns the reviews for this movie as @reviews" do
       get :index, {:movie_id => 1}
-      expect(assigns(:reviews)).to eq(Movie.find_by(params[:id].reviews))
+      expect(assigns(:reviews)).to eq(Movie.find(1).reviews)
     end
 
     it "renders the :index template" do

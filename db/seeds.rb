@@ -12,3 +12,12 @@ review.movie = movie
 review.save!
 
 User.create!(username: "vi")
+User.create!(username: "amanda")
+User.create!(username: "susie")
+
+review.ratings = [Rating.new(rater_id:1, rating: 5)]
+review.ratings << Rating.new(rater_id:2, rating: 2)
+review.ratings << Rating.new(rater_id:3, rating: 4)
+movie.ratings = [Rating.new(rater_id:1, rating:5)]
+review.save!
+movie.save!

@@ -30,8 +30,7 @@ ActiveRecord::Schema.define(version: 20160713190601) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "rating"
-    t.integer  "reviewer_id"
-    t.integer  "movie_id"
+    t.integer  "rater_id"
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.datetime "created_at",    null: false
