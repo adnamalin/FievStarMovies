@@ -7,4 +7,8 @@ class Movie < ActiveRecord::Base
     #   review.rating
   end
 
+  def number_of_reviews
+    self.reviews.count
+  end
+
 end
