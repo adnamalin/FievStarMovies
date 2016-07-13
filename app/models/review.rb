@@ -9,6 +9,7 @@ class Review < ActiveRecord::Base
 
   def average_rating
     ratings = self.ratings.map { |rating| rating.rating }
-    ratings.reduce(:+).to_f/ratings.length
+    average = ratings.reduce(:+).to_f/ratings.length
+    average.round(2)
   end
 end

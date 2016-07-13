@@ -2,14 +2,15 @@
 <h1>Reviews for <%= movie.title %></h1>
 
 <h3>Trusted Reviews</h3>
+<% @reviews.each do |review| %>
+  <% if review.reviewer.trusted_reviewer? %>
+    <%= render "show", review: review %>
+  <% end %>
+<% end %>
 
 <h3>Other Reviews</h3>
 <% @reviews.each do |review| %>
-  <div class="individual_review">
-    <h4><%= review.title %> | <%= Rating.find_by(rater_id: review.reviewer.id, rateable_type:"Movie", rateable_id: review.movie.id).rating %> </h4>
-    <span class="reviewing_author"><%= review.reviewer.username %></span>
-    <span class="review_rating"><%= review.average_rating %></span>
-
-    <p><%= review.body %></p>
-  </div>
+  <% if !review.reviewer.trusted_reviewer? %>
+    <%= render "show", review: review %>
+  <% end %>
 <% end %>
