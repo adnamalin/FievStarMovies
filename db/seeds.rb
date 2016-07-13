@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Movie.create(name: 'The Room', description: ', director: 'Tommy Wiseau', release_date: 2003-06-27)
+
+Rating.create(rater_id: 1, )
