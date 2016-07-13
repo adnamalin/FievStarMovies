@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => 'pages#index'
+
+  root 'movies#index'
+  get 'movies/:id'=>'movies#show', as: 'movie'
+
 end
