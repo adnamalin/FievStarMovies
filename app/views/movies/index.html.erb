@@ -1,5 +1,5 @@
 <% @movies.each do |movie| %>
   <p>
-    <%= link_to movie.title, movie %> - <%= movie.number_of_reviews %> Reviews -
+    <%= link_to movie.title, movie %> - <%= movie.number_of_reviews %> Reviews - <%= movie.average_rating %> Average Cheeses
   </p>
 <% end %>
