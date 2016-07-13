@@ -1,0 +1,24 @@
+<h2>Registration</h2>
+
+<%= form_for @user do |f| %>
+
+  <div>
+     <%= f.label :username %>
+     <%= f.text_area :username %>
+  </div>
+
+  <div>
+     <%= f.label :password %>
+     <%= f.password :password %>
+  </div>
+
+  <div>
+     <%= f.label :password %>
+     <%= f.password :password %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
