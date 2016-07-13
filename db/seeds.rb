@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Movie.create(title: "Dumb & Dumber", description: "A very funny movie", director: "John Smith", release_date: "1992-11-18")
+
+Movie.create(title: "Legally Blonde", description: "Bend and snap", director: "Elle Woods", release_date: "2004-06-18")
+
+Review.create(movie_id: 1)
+
+Review.create(movie_id: 1)
+
+Rating.create(rating: 5, movie_id: 1)
+
+Rating.create(rating: 3, movie_id: 1)

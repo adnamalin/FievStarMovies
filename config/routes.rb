@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'pages#index'
-
+  root 'movies#index'
   get '/users/new' => 'users#new'
   post '/users/new' => 'users#create'
+
+  get 'movies/:id'=>'movies#show', as: 'movie'
 end
