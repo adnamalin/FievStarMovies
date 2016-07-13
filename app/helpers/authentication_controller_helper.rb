@@ -1,7 +1,8 @@
 module AuthenticationControllerHelper
 
   def authorized?(object)
-    logged_in? && object.user.id == current_user.id
+    #must pass something like: @review.reviewer
+    logged_in? && object.id == current_user.id
   end
 
   def restricted_access(object)
