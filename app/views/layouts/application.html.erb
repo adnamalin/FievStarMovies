@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FeivStarMovies</title>
+  <title>FievStarMovies</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- FONTS -->
+  <link href='https://fonts.googleapis.com/css?family=Cookie|Roboto' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<%= yield %>
+  <header>
+    <div id='name-and-logo'>
+      <h1 id="website-name">FievStarMovies</h1>
+      <%= image_tag("logo.png",  id: "logo", size: "70") %>
+    </div>
+    <nav>
+      <%= link_to 'Login' %>
+      <%= link_to 'Register' %>
+    </nav>
+  </header>
+  <div class=".center-container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
