@@ -3,7 +3,10 @@ require 'rails_helper'
 describe ReviewsController do
   before(:each) do
     movie = Movie.create!(title: "The Titanic")
-    movie.reviews = Review.create!(title: "It was okay", body: "somebody", reviewer_id: 1)
+    review = Review.new(title: "It was okay", body: "somebody", reviewer_id: 1)
+    review.movie = movie
+    review.save!
+
     User.create!(username: "vi")
   end
 

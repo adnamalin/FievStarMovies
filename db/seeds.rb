@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+movie = Movie.create!(title: "The Titanic")
+review = Review.new(title: "It was okay", body: "somebody", reviewer_id: 1)
+review.movie = movie
+review.save!
+
+User.create!(username: "vi")

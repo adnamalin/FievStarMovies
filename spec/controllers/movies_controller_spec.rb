@@ -8,9 +8,9 @@ describe MoviesController do
       expect(response).to have_http_status(200)
     end
 
-    it "renders the :show template" do
+    it "renders whatever is on movie_reviews_path" do
       get :show, {:movie_id => 1}
-      expect(response).to render_template(:show)
+      expect(response).to render_template(:'reviews#index')
     end
   end
 end
