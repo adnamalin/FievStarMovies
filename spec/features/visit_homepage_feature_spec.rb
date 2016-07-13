@@ -9,7 +9,7 @@ feature "visiting the homepage" do
 
   scenario "user sees login and register links" do
     visit "/"
-    expect(page).to have_link("Login", :href=>"/sessions/new")
-    expect(page).to have_link("Register", :href=>"/users/new")
+    expect(page).to have_link("Login")
+    expect(page).to have_link("Register")
   end
 end
