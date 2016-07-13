@@ -13,7 +13,7 @@ feature 'registering to the site' do
     fill_in('Username', :with => 'John')
     fill_in('Password', :with => 'password')
     fill_in('Password confirmation', :with => 'password')
-    click_submit
-    expect(page).to have_content "John"
+    click_button "Create User"
+    expect(page).to have_current_path root_path
   end
 end
