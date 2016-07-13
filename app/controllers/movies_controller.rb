@@ -7,6 +7,4 @@ private
   def movie_finder
     @movie = Movie.find(params[:id])
   end
-
-
 end
