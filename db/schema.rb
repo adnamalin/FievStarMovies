@@ -16,12 +16,6 @@ ActiveRecord::Schema.define(version: 20160713201542) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-
   create_table "movies", force: :cascade do |t|
     t.string   "title",        null: false
     t.string   "description",  null: false
@@ -40,6 +34,13 @@ ActiveRecord::Schema.define(version: 20160713201542) do
     t.integer  "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
