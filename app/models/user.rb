@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_secure_password
   has_many :reviews, foreign_key: :reviewer_id
   validates :username, presence: true
 

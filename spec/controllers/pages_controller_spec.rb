@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe PagesController do
+describe MoviesController do
 
   describe 'GET #index' do
-    it ' respinds with status 200' do
+    it ' responds with status 200' do
       get :index
       expect(response).to have_http_status 200
     end

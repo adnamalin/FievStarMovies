@@ -1,7 +1,16 @@
 describe User do
   let(:review) { Review.new(movie_id: 1, reviewer_id:1) }
+  let(:user) { User.create!(username:"vi", password: "1234") }
+  let(:saved_user) { User.find_by(username:"vi") }
 
-  describe "average_review_rating" do
+  it "has a username" do
+    expect(user.username).to eq saved_user.username
+  end
+
+  it "has a secure password" do
+    expect(user.password).to_not eq saved_user.password
+
+  describe "differentiates between trusted and non-trusted reviewers" do
     it "gets the average rating of the review" do
       review.ratings = [Rating.new(rating:5), Rating.new(rating:4), Rating.new(rating:3), Rating.new(rating:4), Rating.new(rating:3), ]
       review.save
