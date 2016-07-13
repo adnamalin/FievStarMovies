@@ -1,21 +1,21 @@
 <h2>Registration</h2>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: users_new_path do |f| %>
 
   <div>
-     <%= f.label :username %>
-     <%= f.text_area :username %>
-  </div>
+     <%= f.label :username %><br />
+     <%= f.text_field :username %>
+  </div><br />
 
   <div>
-     <%= f.label :password %>
-     <%= f.password :password %>
-  </div>
+     <%= f.label :password %><br />
+     <%= f.password_field :password %>
+  </div><br />
 
   <div>
-     <%= f.label :password %>
-     <%= f.password :password %>
-  </div>
+     <%= f.label :password %><br />
+     <%= f.password_field :password %>
+  </div><br />
 
   <div>
     <%= f.submit %>
