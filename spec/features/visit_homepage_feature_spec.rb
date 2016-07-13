@@ -4,7 +4,7 @@ feature "visiting the homepage" do
   scenario "the user sees website name" do
     visit "/"
 
-    expect(page).to have_content 'FeivStarMovies'
+    expect(page).to have_content 'FievStarMovies'
   end
 
   scenario "user sees login and register links" do
