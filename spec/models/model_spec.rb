@@ -16,6 +16,12 @@ describe Movie do
       end
     end
 
+    context "it has 0 average rating" do
+      it "has total cheese average of 0" do
+        expect(movie.average_rating).to eq 0
+      end
+    end
+
   end
 
 end
