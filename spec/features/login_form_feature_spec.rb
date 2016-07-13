@@ -17,4 +17,14 @@ feature "User can log in" do
     click_button('Login')
     expect(page).to have_current_path root_path
   end
+
+   scenario "user can go to the homepage, click logout" do
+    visit '/'
+    click_link "Login"
+    fill_in('Username', :with => 'vi')
+    fill_in('Password', :with => '12345678')
+    click_button('Login')
+    click_link "Logout"
+    expect(page).to have_link 'Register'
+  end
 end

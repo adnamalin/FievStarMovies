@@ -28,14 +28,15 @@ describe SessionsController do
     end
   end
 
-   xdescribe "POST #create" do
+   describe "POST #create" do
   before(:each) do
-    User.create!(username:"vi", password:"1234")
+    @user = User.create!(username:"vi", password:"1234")
+    session[:user_id] = @user.id
   end
 
     describe "logging out" do
       it "log out wipes out session[:user_id]" do
-        expect { get:destory }.to change { session[:user_id] }
+        expect { get :destroy }.to change { session[:user_id] }
       end
     end
   end
