@@ -1,7 +1,9 @@
 <h2>All Movies</h2>
 
-<% @movies.each do |movie| %>
-  <p>
-    <%= link_to movie.title, movie %> - <%= movie.number_of_reviews %> Reviews - <%= movie.average_rating %> Average Cheeses
-  </p>
+<% if @movies.any? %>
+  <% @movies.each do |movie| %>
+    <p>
+      <%= link_to movie.title, movie %> - <%= movie.number_of_reviews %> Reviews - <%= movie.average_rating %> Average Cheeses
+    </p>
+  <% end %>
 <% end %>

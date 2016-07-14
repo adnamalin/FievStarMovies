@@ -1,1 +1,21 @@
-Show page
+<div id="title_rating"> <!-- Movie Title and Rating -->
+  <ul>
+    <li><h1><%= @movie.title %></h1></li>
+    <li><h3>Average Rating: <%= @movie.average_rating %></h3></li>
+  </ul>
+</div>
+<div>
+  <ul id="date_director">
+    <li><%= @movie.release_date %></li>
+    <li><%= @movie.director %> </li>
+  </ul>
+</div>
+
+<div> <!-- Movie Description -->
+<p><%= @movie.description %></p>
+</div>
+
+<div>
+  <%= link_to "Add Review" %>
+</div>
+

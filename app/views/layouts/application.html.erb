@@ -15,10 +15,13 @@
       <%= image_tag("logo.png",  id: "logo", size: "70") %>
     </div>
     <nav>
-      <%= link_to 'Login' %>
-      <%= link_to 'Register', users_new_path %>
-      <%= link_to 'Logout' %>
       <%= link_to 'Home' %>
+      <% if logged_in? %>
+        <%= link_to 'Logout', logout_path%>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Register', users_new_path %>
+      <% end %>
     </nav>
   </header>
   <div class="center-container">
