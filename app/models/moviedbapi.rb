@@ -16,6 +16,10 @@ class Moviedbapi
     end
   end
 
+  def image_link(poster_path)
+    "http://image.tmdb.org/t/p/w500/#{poster_path}"
+  end
+
   def seed_database
     5.times do |x|
       response = HTTParty.get("#{@base_uri}/movie/top_rated?page=#{x+1}&api_key=#{@api_key}")
@@ -23,7 +27,7 @@ class Moviedbapi
       results.each do |result|
         create_movie_from_top_rated(result)
       end
-      sleep(10)
+      sleep(3)
     end
   end
 
