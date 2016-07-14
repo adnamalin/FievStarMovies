@@ -50,5 +50,4 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
-
-
+gem 'simplecov', :require => false, :group => :test
