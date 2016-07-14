@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
   def index
     @genres = Genre.all.map { |gen| gen.genre}
-    @movies = Movie.paginate(:page => params[:page], :per_page => 2)
+    @movies = Movie.paginate(:page => params[:page], :per_page => 20)
     if params[:genre] != nil
-      @movies = Genre.find_by(genre: params[:genre]).movies.paginate(:page => params[:page], :per_page => 2)
+      @movies = Genre.find_by(genre: params[:genre]).movies.paginate(:page => params[:page], :per_page => 20)
     end
   end
 

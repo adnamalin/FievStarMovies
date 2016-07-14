@@ -25,7 +25,7 @@ class Movie < ActiveRecord::Base
 
 
   def display_genres
-    genres = self.genres.map { |gen| gen.genre.capitalize }
+    genres = self.genres.map { |gen| gen.genre }
     return genres.join(", ")
   end
 
