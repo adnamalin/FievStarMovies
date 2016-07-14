@@ -16,6 +16,7 @@ class RatingsController < ApplicationController
     review = Review.find(params[:review_id])
     review.ratings.create!(rating: params[:rating][:rating],
       rater_id:current_user.id)
+    # render template: "reviews/form"
     if review.save!
       movie = Review.find(params[:review_id]).movie
       redirect_to movie_path(movie.id)
@@ -27,7 +28,9 @@ class RatingsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @rating = @movie.ratings.new(rating_params)
     @rating.save
-    redirect_to new_movie_review_path(@movie)
+    @review = Review.new
+    render template: 'reviews/_form', layout: false
+    # redirect_to new_movie_review_path(@movie)
   end
 
   private

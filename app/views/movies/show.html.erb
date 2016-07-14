@@ -15,7 +15,7 @@
         <li><%= @movie.director %> </li>
       </ul>
       <p><%= @movie.description %></p>
-      <%= link_to "Add Review", movie_new_rating_path(@movie) %>
+      <%= link_to "Add Review", new_movie_review_path(@movie) %>
     </div>
 
     <div class="movie_reviews">

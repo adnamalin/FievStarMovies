@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>FievStarMovies</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <!-- FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Cookie|Roboto|Slabo+27px' rel='stylesheet' type='text/css'>
@@ -31,6 +31,7 @@
             <li><%= link_to 'Login', login_path %></li>
             <li><%= link_to 'Register', new_user_path %></li>
             <% end %>
+            <li><%= link_to 'Cheesify', root_path, class: "cheesy" %></li>
           </ul>
         </div>
       </nav>
