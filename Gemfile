@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use will_paginate for pagination
 gem 'will_paginate', '~> 3.0.5'
 
+# Use HTTParty to make API get requests
+gem 'httparty'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

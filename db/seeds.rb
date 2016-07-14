@@ -50,3 +50,6 @@ Assignment.create!(movie_id: 1, genre_id: 2)
 Assignment.create!(movie_id: 2, genre_id: 2)
 
 Assignment.create!(movie_id: 3, genre_id: 3)
+
+api = Moviedbapi.new
+api.seed_database
