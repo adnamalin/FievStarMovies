@@ -15,7 +15,7 @@
 <p><%= @movie.description %></p>
 </div>
 
-<div>
-  <%= link_to "Add Review" %>
+<div class="movie_reviews">
+  <%= render "reviews/index", reviews: @movie.reviews %>
 </div>
 

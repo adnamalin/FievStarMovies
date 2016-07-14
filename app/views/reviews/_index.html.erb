@@ -1,15 +1,12 @@
-<% movie = @reviews[0].movie %>
-<h1>Reviews for <%= movie.title %></h1>
-
 <h3>Trusted Reviews</h3>
-<% @reviews.each do |review| %>
+<% reviews.each do |review| %>
   <% if review.reviewer.trusted_reviewer? %>
     <%= render "show", review: review %>
   <% end %>
 <% end %>
 
 <h3>Other Reviews</h3>
-<% @reviews.each do |review| %>
+<% reviews.each do |review| %>
   <% if !review.reviewer.trusted_reviewer? %>
     <%= render "show", review: review %>
   <% end %>

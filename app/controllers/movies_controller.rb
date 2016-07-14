@@ -3,10 +3,6 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
-  def index
-    @movies = Movie.all
-  end
-
   def show
     movie_finder
   end
