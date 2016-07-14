@@ -13,12 +13,9 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.nav-wrapper {
-  background-color: #41a4cc;
-}
 /* unvisited link */
 a:link {
-    color: #f25e5e;
+    color: #41a4cc;
 }
 
 /* visited link */
@@ -28,7 +25,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    color: #41a4cc;
+    color: #f25e5e;
 }
 
 nav a:link {
@@ -41,5 +38,10 @@ nav a:visited {
 
 h2 {
   font-family: 'Slabo 27px', serif;
-  color: #f25e5e;
+  color: #41a4cc;
+}
+
+#login-form-container{
+  width: 400px;
+  margin: 0 auto;
 }
