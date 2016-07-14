@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
   has_many :genres, through: :assignments
 
   validates :title, presence: true, uniqueness: true
-  validates :description, :director, :release_date, presence: true
+  validates :description, :release_date, presence: true
 
   def average_rating
     if number_of_ratings == 0
@@ -25,7 +25,7 @@ class Movie < ActiveRecord::Base
 
 
   def display_genres
-    genres = self.genres.map { |gen| gen.genre.capitalize }
+    genres = self.genres.map { |gen| gen.genre }
     return genres.join(", ")
   end
 
