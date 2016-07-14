@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
 
   def new
+    @movie = Movie.find(params[:movie_id])
     @rating = Rating.new
   end
 
