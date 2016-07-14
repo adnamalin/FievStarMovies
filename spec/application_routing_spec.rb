@@ -26,19 +26,27 @@ RSpec.describe "Routing to the application", :type => :routing do
     expect(:get => "/logout").to route_to("sessions#destroy")
   end
 
+  it "POST /login routes to session#create" do
+    expect(:post => "/login").to route_to("sessions#create")
+  end
+
   it "GET /reviews/:id/ratings/new routes to ratings#new" do
-      expect(:get => "/reviews/1/ratings/new").to route_to("ratings#new")
+      expect(:get => "/reviews/1/ratings/new").to route_to(
+        controller: "ratings", action: "new", review_id: "1")
   end
 
   it "GET /reviews/:id/comments/new routes to comments#new" do
-      expect(:get => "/reviews/1/comments/new").to route_to("comments#new")
+      expect(:get => "/reviews/1/comments/new").to route_to(
+        controller: "comments", action: "new", review_id: "1")
   end
 
   it "POST /reviews/:id/ratings routes to ratings#create" do
-      expect(:post => "/reviews/1/ratings").to route_to("ratings#create")
+      expect(:post => "/reviews/1/ratings").to route_to(
+        controller: "ratings", action: "create", review_id: "1")
   end
 
   it "POST /reviews/:id/comments routes to comments#create" do
-      expect(:post => "/reviews/1/comments").to route_to("comments#create")
+      expect(:post => "/reviews/1/comments").to route_to(
+        controller: "comments", action: "create", review_id: "1")
   end
 end
