@@ -1,0 +1,10 @@
+<%= form_for @rating, url: movie_ratings_path do |f| %>
+  <div>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+
+   <div>
+    <%= f.submit %>
+  </div>
+<% end %>

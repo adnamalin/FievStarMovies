@@ -6,19 +6,18 @@ feature "User can log in" do
 
   scenario 'user clicks on add review link and goes to review form page' do
     visit movie_path(movie)
-
     click_link "Add Review"
-     save_and_open_page
     expect(page).to have_content "Add Review for #{movie.title}"
   end
 
-  xscenario "user can go to the homepage, click log in, and enter credentials" do
-    visit '/'
-    click_link "Login"
-    fill_in('Username', :with => 'vi')
-    fill_in('Password', :with => '12345678')
-    click_button('Login')
-    expect(page).to have_current_path root_path
+  scenario "user can fill out new review form" do
+    visit movie_path(movie)
+    click_link "Add Review"
+    fill_in('review[title]', :with => 'Mock Review')
+    fill_in('review[title]', :with => 'Mock Review')
+    fill_in('review[body]', :with => 'Some random words here')
+    click_button('Add Review!')
+    expect(page).to have_current_path movie_path(movie)
   end
 
    xscenario "user can go to the homepage, click logout" do

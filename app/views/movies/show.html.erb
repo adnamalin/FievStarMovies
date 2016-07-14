@@ -15,7 +15,7 @@
 <p><%= @movie.description %></p>
 </div>
 
-<%= link_to "Add Review", new_movie_review_path(@movie) %>
+<%= link_to "Add Review", new_movie_rating_path(@movie) %>
 
 <div class="movie_reviews">
   <%= render "reviews/index", reviews: @movie.reviews %>
