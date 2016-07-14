@@ -27,7 +27,7 @@ class Moviedbapi
       results.each do |result|
         create_movie_from_top_rated(result)
       end
-      sleep(3)
+      sleep(5)
     end
   end
 
