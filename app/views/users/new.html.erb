@@ -1,24 +1,4 @@
 <h2>Registration</h2>
 
-<%= form_for @user do |f| %>
+<%= render 'form' %>
 
-  <div>
-     <%= f.label :username %><br />
-     <%= f.text_field :username %>
-  </div><br />
-
-  <div>
-     <%= f.label :password %><br />
-     <%= f.password_field :password %>
-  </div><br />
-
-  <div>
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation %>
-  </div><br />
-
-  <div>
-    <%= f.submit %>
-  </div>
-
-<% end %>
