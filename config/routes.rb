@@ -1,14 +1,15 @@
 
 Rails.application.routes.draw do
   resources :movies, only: [:index, :show] do
-    resources :reviews, only: [:new, :create, :destroy]
-    resources :ratings, only: [:new, :create]
+    get 'ratings/new', to: 'ratings#movie_new', as: 'ratings'
+    post 'ratings', to: 'ratings#movie_create', as: 'new_rating'
+    delete '/reviews/:id', to: 'reviews#destroy'
+    resources :reviews, only: [:new, :create], shallow: true do
+      resources :ratings, only: [:new, :create]
+      resources :comments, only: [:new, :create]
+    end
   end
   resources :users, only: [:new, :create]
-  resources :reviews, only: [:new, :create] do
-    resources :ratings, only: [:new, :create]
-    resources :comments, only: [:new, :create]
-  end
 
   root 'movies#index'
   get '/login' => 'sessions#new'
