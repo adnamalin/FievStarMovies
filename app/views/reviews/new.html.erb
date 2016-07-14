@@ -1,6 +1,9 @@
 <div id="user-form-container">
 
 <h4 class='red-text lighten-1'>Add Review for <br><%= @movie.title %></h4>
-
-<%= render 'form' %>
+<div class="first-rating-form">
+  <%= render 'ratings/form' %>
+</div>
+<div class="dynamic-form" style="display: none">
+</div>
 </div>
