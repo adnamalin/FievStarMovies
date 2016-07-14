@@ -15,9 +15,9 @@ class Review < ActiveRecord::Base
   end
 
   def movie_rating=(rating)
-    rating.rater_id = self.reviewer.id
+    rating.rater_id ||= self.reviewer.id
     rating.rateable_type = "Movie"
-    rating.rateable_id = self.movie.id
+    rating.rateable_id ||= self.movie.id
     rating.save!
   end
 

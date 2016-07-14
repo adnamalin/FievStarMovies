@@ -20,6 +20,10 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def forbidden
+    render '404'
+  end
+
  private
   def login_params
     params.require(:user).permit(:username, :password)

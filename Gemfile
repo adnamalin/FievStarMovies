@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara', "~> 2.5"
   gem 'launchy'
   gem 'pry'
+  gem 'rack_session_access'
   gem 'faker', github: 'stympy/faker'
 end
 

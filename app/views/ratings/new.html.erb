@@ -1,6 +1,21 @@
-<div id="user-form-container">
+<%= link_to "Back", movie_path(@review.movie.id) %>
 
-<h4 class='red-text lighten-1'>Add Rating for <br> <%= @movie.title %></h4>
-
-<%= render 'form' %>
+<%= form_for [@review, @rating] do |f|%>
+<div>
+  Rate this review:<br />
+  <input name="rating[rating]" type="radio" value="1" id="1" />
+  <label for="1">1</label>
+  <input name="rating[rating]" type="radio" value="2" id="2" />
+  <label for="2">2</label>
+  <input name="rating[rating]" type="radio" value="3" id="3" />
+  <label for="3">3</label>
+  <input name="rating[rating]" type="radio" value="4" id="4" />
+  <label for="4">4</label>
+  <input name="rating[rating]" type="radio" value="5" id="5" />
+  <label for="5">5</label>
 </div>
+
+<div>
+  <button class="btn waves-effect waves-light red lighten-1" type="submit" name="Rate!">Rate!</button>
+</div>
+<% end %>

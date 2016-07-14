@@ -28,7 +28,7 @@ describe SessionsController do
     end
   end
 
-   describe "POST #create" do
+  describe "GET logout" do
   before(:each) do
     @user = User.create!(username:"vi", password:"1234")
     session[:user_id] = @user.id
