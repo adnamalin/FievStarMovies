@@ -1,6 +1,5 @@
 .apple_pagination {
-  background: #f1f1f1;
-  border: 1px solid #EF5350;
+  /*background: #f1f1f1;*/
   text-align: center;
   padding: 1em;
   cursor: default; }
@@ -11,7 +10,8 @@
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #41A4CC;
+    background-color: #EF5350;
+    color: #FFFFFF;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -19,7 +19,7 @@
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
     border-radius: 1em;
-    text-shadow: #41A4CC 1px 1px 1px; }
+    /*text-shadow: #41A4CC 1px 1px 1px;*/ }
   .apple_pagination a {
     text-decoration: none;
     color: black; }

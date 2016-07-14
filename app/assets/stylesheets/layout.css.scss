@@ -18,6 +18,14 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#do-not-hide {
+  display: inline-block
+}
+
+#genre {
+  display: inline-block
+}
+
 /* unvisited link */
 a:link {
     color: #41a4cc;
@@ -25,7 +33,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color: #f7e841;
+    color: #aad1e0;
 }
 
 /* mouse over link */
@@ -77,4 +85,3 @@ p.comment {
   margin-left:10%;
   border-bottom:1px solid grey;
 }
-

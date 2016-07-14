@@ -25,7 +25,7 @@ describe Movie do
 
     context "when movie has three 5-cheese ratings" do
       it "has total cheese average of 5" do
-        expect(movie_with_reviews_and_ratings.average_rating).to eq 5
+        expect(movie_with_reviews_and_ratings.average_rating).to eq 5.0
       end
     end
 

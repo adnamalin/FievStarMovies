@@ -22,7 +22,7 @@ movie.ratings = [Rating.new(rater_id:1, rating:5)]
 review.movie_rating = movie.ratings[0]
 
 
-review.comments = [Comment.new(commenter_id:1, comment: "she was so pretty"), Comment.new(commenter_id:2, comment: "that was a dumb commet"),Comment.new(commenter_id:3, comment: "stupid review"),Comment.new(commenter_id:1, comment: "your comment is dumb!")]
+review.comments = [Comment.new(commenter_id:1, comment: "she was so pretty"), Comment.new(commenter_id:2, comment: "that was a dumb comment"),Comment.new(commenter_id:3, comment: "stupid review"),Comment.new(commenter_id:1, comment: "your comment is dumb!")]
 review.save!
 movie.save!
 
@@ -37,3 +37,16 @@ review2.movie_rating = rating
 review2.save!
 
 Movie.create(title: "Legally Blonde", description: "Bend and snap", director: "Elle Woods", release_date: "2004-06-18")
+
+Genre.create!(genre: "comedy")
+Genre.create!(genre: "horror")
+Genre.create!(genre: "drama")
+Genre.create!(genre: "scifi")
+
+Assignment.create!(movie_id: 1, genre_id: 1)
+
+Assignment.create!(movie_id: 1, genre_id: 2)
+
+Assignment.create!(movie_id: 2, genre_id: 2)
+
+Assignment.create!(movie_id: 3, genre_id: 3)
