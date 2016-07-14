@@ -2,7 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :movie
   belongs_to :reviewer, class_name: "User"
   has_many :ratings, as: :rateable
-  has_many :comments
+  has_many :comments, dependent: destroy
 
   validate :movie_rating_presence
   validates :body, presence: true
@@ -10,7 +10,7 @@ class Review < ActiveRecord::Base
   validates :movie_id, presence: true
 
   def movie_rating
-    Rating.find_by(rater_id: self.reviewer.id, 
+    Rating.find_by(rater_id: self.reviewer.id,
       rateable_id: self.movie.id, rateable_type: "Movie")
   end
 
