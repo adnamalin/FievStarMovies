@@ -24,17 +24,17 @@ feature "viewing all reviews per movie" do
 
   context "when user clicks on single movie page" do
     scenario "the user should see the title of the movie" do
-      visit "/movies/#{movie.id}/reviews"
+      visit "/movies/#{movie.id}"
       expect(page).to have_content movie.title
     end
 
     scenario "the user should see the reviews" do
-      visit "/movies/#{movie.id}/reviews"
+      visit "/movies/#{movie.id}"
       expect(page).to have_content movie.reviews[0].title
     end
 
     scenario "the user should see the comments" do
-      visit "/movies/#{movie.id}/reviews"
+      visit "/movies/#{movie.id}"
       expect(page).to have_content movie.reviews[0].comments[0].comment
     end
   end

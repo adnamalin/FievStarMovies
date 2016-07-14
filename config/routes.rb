@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  get 'movies/:id'=>'movies#show', as: 'movie'
-  resources :movies, only: [:show] do
-    resources :reviews, only: [:index]
-  end
+  resources :movies, only: [:index, :show]
 
-  get '/' => 'pages#index'
+  root 'movies#index'
   get '/users/new' => 'users#new'
-  post '/users/new' => 'users#create'
+  post '/users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
