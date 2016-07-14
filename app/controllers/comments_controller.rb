@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
 
   def create
     logged_in_access
-    p params
     comment = Comment.create!(commenter_id: current_user.id,
       comment: params[:comment][:comment], review_id: params[:review_id])
     if comment.save!
