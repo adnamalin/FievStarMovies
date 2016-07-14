@@ -15,7 +15,7 @@
       <%= image_tag("logo.png",  id: "logo", size: "70") %>
     </div>
     <nav>
-      <%= link_to 'Home' %>
+      <%= link_to 'Home', root_path %>
       <% if logged_in? %>
         <%= link_to 'Logout', logout_path%>
       <% else %>

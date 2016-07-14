@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160713200509) do
-=======
-ActiveRecord::Schema.define(version: 20160713185058) do
->>>>>>> 3c8ed6ba7fee9198ed674befc0f9b31a9c27bc95
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,16 +36,10 @@ ActiveRecord::Schema.define(version: 20160713185058) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "rating"
     t.integer  "rater_id"
-<<<<<<< HEAD
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-=======
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> 3c8ed6ba7fee9198ed674befc0f9b31a9c27bc95
   end
 
   add_index "ratings", ["rateable_type", "rateable_id"], name: "index_ratings_on_rateable_type_and_rateable_id", using: :btree
