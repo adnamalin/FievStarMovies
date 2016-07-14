@@ -1,0 +1,31 @@
+<%= form_for @rating, url: movie_ratings_path do |f| %>
+    <div class="rating-form">
+      <p>
+        <input class="with-gap" name="rating[rating]" type="radio" value="1" id="test1" />
+        <label for="test1">1 cheeses</label>
+      </p>
+      <p>
+        <input class="with-gap" name="rating[rating]" type="radio" id="test2" value="2" />
+        <label for="test2">2 cheeses</label>
+      </p>
+      <p>
+        <input class="with-gap" name="rating[rating]" type="radio" id="test3" value="3" />
+        <label for="test3">3 cheeses</label>
+      </p>
+      <p>
+        <input class="with-gap" name="rating[rating]" type="radio" id="test4" value="4" />
+        <label for="test4">4 cheeses</label>
+      </p>
+      <p>
+        <input class="with-gap" name="rating[rating]" type="radio" id="test5" value="5" />
+        <label for="test5">5 cheeses</label>
+      </p>
+    </div>
+    <br />
+    <div>
+      <button class="btn waves-effect waves-light red lighten-1" type="submit" name="Rate!">Rate!
+        <i class="material-icons right">done</i>
+      </button>
+    </div>
+    <% end %>
+

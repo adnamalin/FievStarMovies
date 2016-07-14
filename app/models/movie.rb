@@ -8,7 +8,7 @@ class Movie < ActiveRecord::Base
   validates :description, :director, :release_date, presence: true
 
   def average_rating
-    if number_of_reviews == 0
+    if number_of_ratings == 0
       return 0
     else
       total = 0
@@ -23,9 +23,15 @@ class Movie < ActiveRecord::Base
     self.reviews.count
   end
 
+
   def display_genres
     genres = self.genres.map { |gen| gen.genre.capitalize }
     return genres.join(", ")
+  end
+
+
+  def number_of_ratings
+    self.ratings.count
   end
 
 end
