@@ -17,6 +17,10 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def number_of_reviews
+    self.reviews.count
+  end
+
   def number_of_ratings
     self.ratings.count
   end
