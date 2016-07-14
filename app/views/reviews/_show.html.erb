@@ -1,14 +1,19 @@
 <div class="individual_review">
-  <h4><%= review.title %> | <%= Rating.find_by(rater_id: review.reviewer.id, rateable_type:"Movie", rateable_id: review.movie.id).rating %> </h4>
-  <span class="top_right">
-
-  </span>
-  <span class="reviewing_author"><%= review.reviewer.username %></span>
-  <span class="review_rating"><%= review.average_rating %></span>
-
+  <h4><%= review.title %> | <%= Rating.find_by(rater_id: review.reviewer.id, rateable_type:"Movie", rateable_id: review.movie.id).rating %> Cheeses </h4>
+  <span class="reviewing_author"> Posted by <%= review.reviewer.username %></span><br />
+  <span class="review_rating">Review Rating: <%= review.average_rating %></span>
+  <% if authorized?(review.reviewer) %>
+  	<span class="delete_link"><%= link_to "Delete"%></span>
+  <% end %>
   <p><%= review.body %></p>
 
   <% if review.comments.count > 0 %>
+  	<h6>Comments:</h6>
     <%= render "comments/index", comments: review.comments %>
   <% end %>
+
+  <% if current_user %>
+  	<%= link_to "Rate this review" %> | <%= link_to "Add a comment" %>
+  <% end %>
+  
 </div>
