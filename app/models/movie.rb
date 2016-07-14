@@ -1,6 +1,6 @@
 class Movie < ActiveRecord::Base
-  has_many :ratings
   has_many :reviews
+  has_many :ratings, as: :rateable
 
   validates :title, presence: true, uniqueness: true
   validates :description, :director, :release_date, presence: true
@@ -20,5 +20,4 @@ class Movie < ActiveRecord::Base
   def number_of_reviews
     self.reviews.count
   end
-
 end

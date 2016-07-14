@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20160713200509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "review_id"
+    t.string   "commenter_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string   "title",        null: false
     t.string   "description",  null: false
@@ -28,15 +36,21 @@ ActiveRecord::Schema.define(version: 20160713200509) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "rating"
     t.integer  "rater_id"
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
+  add_index "ratings", ["rateable_type", "rateable_id"], name: "index_ratings_on_rateable_type_and_rateable_id", using: :btree
+
   create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
     t.integer  "movie_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "reviewer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
