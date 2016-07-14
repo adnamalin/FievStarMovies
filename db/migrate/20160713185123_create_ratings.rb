@@ -3,9 +3,8 @@ class CreateRatings < ActiveRecord::Migration
     create_table :ratings do |t|
       t.integer :rating
       t.integer :rater_id
-      t.integer :movie_id
-
-      t.timestamps( null: false)
+      t.references :rateable, polymorphic: true, index:true
+      t.timestamps(null:false)
     end
   end
 end

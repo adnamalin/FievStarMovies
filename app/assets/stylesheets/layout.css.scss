@@ -45,3 +45,23 @@ h2 {
   width: 400px;
   margin: 0 auto;
 }
+
+div.individual_review {
+  margin:0 100px;
+  padding:10px;
+  border:1px dotted grey;
+  position:relative;
+}
+
+span.commenter {
+  display:block;
+  position:absolute;
+  right:12%;
+  color:grey;
+}
+
+p.comment {
+  width:80%;
+  margin-left:10%;
+  border-bottom:1px solid grey;
+}

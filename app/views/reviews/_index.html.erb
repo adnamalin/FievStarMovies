@@ -1,0 +1,13 @@
+<h3>Trusted Reviews</h3>
+<% reviews.each do |review| %>
+  <% if review.reviewer.trusted_reviewer? %>
+    <%= render "reviews/show", review: review %>
+  <% end %>
+<% end %>
+
+<h3>Other Reviews</h3>
+<% reviews.each do |review| %>
+  <% if !review.reviewer.trusted_reviewer? %>
+    <%= render "reviews/show", review: review %>
+  <% end %>
+<% end %>
