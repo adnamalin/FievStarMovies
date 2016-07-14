@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-
+  get '/404' => 'sessions#invalid', as: "no_access"
 end

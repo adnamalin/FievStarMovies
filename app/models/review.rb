@@ -10,14 +10,14 @@ class Review < ActiveRecord::Base
   validates :movie_id, presence: true
 
   def movie_rating
-    Rating.find_by(rater_id: self.reviewer.id, 
+    Rating.find_by(rater_id: self.reviewer.id,
       rateable_id: self.movie.id, rateable_type: "Movie")
   end
 
   def movie_rating=(rating)
-    rating.rater_id = self.reviewer.id
+    rating.rater_id ||= self.reviewer.id
     rating.rateable_type = "Movie"
-    rating.rateable_id = self.movie.id
+    rating.rateable_id ||= self.movie.id
     rating.save!
   end
 
