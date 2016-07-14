@@ -4,12 +4,7 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     if params[:genre] != nil
       @movies = @movies.select {|mov| mov.display_genres.include?(params[:genre])}
-    else params[:sorter] == "director"
-      @movies = Movie.all
     end
-
-
-
   end
 
   def show

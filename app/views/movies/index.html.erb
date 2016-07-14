@@ -1,8 +1,5 @@
 <h2>All  Movies<% if params[:genre] %> (<%= params[:genre] %>)<% end %></h2>
 
-<%= debug params %>
-
-
 <%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
   <%= label_tag("Filter By Genre:") %>
   <%= select_tag "genre", options_for_select(@genres) %>

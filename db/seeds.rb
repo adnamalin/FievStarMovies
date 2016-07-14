@@ -41,6 +41,7 @@ Movie.create(title: "Legally Blonde", description: "Bend and snap", director: "E
 Genre.create!(genre: "comedy")
 Genre.create!(genre: "horror")
 Genre.create!(genre: "drama")
+Genre.create!(genre: "scifi")
 
 Assignment.create!(movie_id: 1, genre_id: 1)
 
