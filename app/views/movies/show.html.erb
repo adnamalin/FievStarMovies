@@ -1,23 +1,25 @@
-<div id="title_rating"> <!-- Movie Title and Rating -->
-  <ul>
-    <li><h1><%= @movie.title %></h1></li>
-    <li><h3>Average Rating: <%= @movie.average_rating %></h3></li>
-  </ul>
-</div>
-<div>
-  <ul id="date_director">
-    <li><%= @movie.release_date %></li>
-    <li><%= @movie.director %> </li>
-  </ul>
-</div>
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light row valign-wrapper">
+    <!-- <img class="activator" src="images/office.jpg"> -->
+  </div>
+  <div class="card-content">
+    <div id="title_rating"> <!-- Movie Title and Rating -->
+      <ul>
+        <li><h1><%= @movie.title %></h1></li>
+        <li><h3>Average Rating: <%= @movie.average_rating %></h3></li>
+      </ul>
+    </div>
+    <div id="content">
+      <ul id="date_director">
+        <li><%= @movie.release_date %></li>
+        <li><%= @movie.director %> </li>
+      </ul>
+      <p><%= @movie.description %></p>
+      <%= link_to "Add Review", new_movie_rating_path(@movie) %>
+    </div>
 
-<div> <!-- Movie Description -->
-<p><%= @movie.description %></p>
+    <div class="movie_reviews">
+      <%= render "reviews/index", reviews: @movie.reviews %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "Add Review", new_movie_rating_path(@movie) %>
-
-<div class="movie_reviews">
-  <%= render "reviews/index", reviews: @movie.reviews %>
-</div>
-
