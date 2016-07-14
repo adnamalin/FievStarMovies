@@ -5,6 +5,8 @@
   </div>
   <div class="card-content">
     <span class="card-title activator grey-text text-darken-4"> <%= link_to movie.title, movie %><i class="material-icons right">more_vert</i></span>
+    <p>Genres: <%= movie.display_genres %> </p>
+    <p>Director: <%= movie.director %></p>
     <p><%= movie.number_of_reviews %> Reviews | <%= movie.average_rating %> Average Cheeses</p></p>
   </div>
   <div class="card-reveal">
