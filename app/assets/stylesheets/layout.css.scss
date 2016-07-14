@@ -1,32 +1,49 @@
-header {
-  display: flex;
-  align-items:center;
-  justify-content: space-around;
-  margin: 50px 0px;
-}
-
-#name-and-logo {
-  display: flex;
-  align-items:center;
-}
-
-#logo{
-  margin: 0 10px;
-}
-
 #website-name{
   margin: 0 10px;
-  color:#488AC7;
+  margin-bottom: 20px;
+  color:#FFFFFF;
   font-family: 'Cookie', cursive;
   font-size: 3.5em;
 }
 
 .center-container {
-margin: 50px auto;
-width: 900px;
-padding: 10px 0;
-border: 1px dashed #488AC7;
-font-family: 'Roboto', sans-serif;
+  margin: 50px auto;
+  width: 900px;
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* unvisited link */
+a:link {
+    color: #41a4cc;
+}
+
+/* visited link */
+a:visited {
+    color: #f7e841;
+}
+
+/* mouse over link */
+a:hover {
+    color: #f25e5e;
+}
+
+nav a:link {
+  color: #FFFFFF;
+}
+
+nav a:visited {
+  color: #FFFFFF;
+}
+
+h2 {
+  font-family: 'Slabo 27px', serif;
+  color: #41a4cc;
+}
+
+#login-form-container{
+  width: 400px;
+  margin: 0 auto;
 }
 
 div.individual_review {

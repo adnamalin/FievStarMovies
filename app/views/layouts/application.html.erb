@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!-- FONTS -->
-  <link href='https://fonts.googleapis.com/css?family=Cookie|Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cookie|Roboto|Slabo+27px' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="assets/materialize.min.css"  media="screen,projection"/>
@@ -17,24 +18,27 @@
 
 </head>
 <body>
-  <header>
-    <div id='name-and-logo'>
-      <h1 id="website-name">FievStarMovies</h1>
-      <%= image_tag("logo.png",  id: "logo", size: "70") %>
-    </div>
+  <div class="navbar-fixed">
     <nav>
-      <%= link_to 'Home', root_path %>
-      <% if logged_in? %>
-        <%= link_to 'Logout', logout_path%>
-      <% else %>
-        <%= link_to 'Login', login_path %>
-        <%= link_to 'Register', new_user_path %>
-      <% end %>
-    </nav>
-  </header>
-  <div class="center-container">
-    <%= yield %>
-  </div>
+      <div class="nav-wrapper red lighten-1">
+        <span id="website-name">FievStarMovies</span>
+        <%= image_tag("logo.png",  class: "logo", size: "50") %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to 'Home', root_path %></li>
+            <% if logged_in? %>
+            <li><%= link_to 'Logout', logout_path%></li>
+            <% else %>
+            <li><%= link_to 'Login', login_path %></li>
+            <li><%= link_to 'Register', new_user_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-</body>
-</html>
+    <div class="center-container">
+      <%= yield %>
+    </div>
+
+  </body>
+  </html>
