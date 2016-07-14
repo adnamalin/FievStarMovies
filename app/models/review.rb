@@ -1,7 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :movie
   belongs_to :reviewer, class_name: "User"
-  has_many :ratings, as: :rateable
+  has_many :ratings, as: :rateable, dependent: destroy
   has_many :comments, dependent: destroy
 
   validate :movie_rating_presence
