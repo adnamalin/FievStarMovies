@@ -2,6 +2,7 @@ class RatingsController < ApplicationController
   def new
     logged_in_access
     @review = Review.find(params[:review_id])
+    @rating = Rating.new
   end
 
   def movie_new

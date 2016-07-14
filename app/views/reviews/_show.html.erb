@@ -3,7 +3,7 @@
   <span class="reviewing_author"> Posted by <%= review.reviewer.username %></span><br />
   <span class="review_rating">Review Rating: <%= review.average_rating %></span>
   <% if authorized?(review.reviewer) %>
-  	<span class="delete_link"><%= link_to "Delete", movie_review_path(review.movie.id, review.id), method: :delete%></span>
+  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete%></span>
   <% end %>
   <p><%= review.body %></p>
 
