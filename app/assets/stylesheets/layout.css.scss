@@ -1,30 +1,45 @@
-header {
-  display: flex;
-  align-items:center;
-  justify-content: space-around;
-  margin: 50px 0px;
-}
-
-#name-and-logo {
-  display: flex;
-  align-items:center;
-}
-
-#logo{
-  margin: 0 10px;
-}
-
 #website-name{
   margin: 0 10px;
-  color:#488AC7;
+  margin-bottom: 20px;
+  color:#FFFFFF;
   font-family: 'Cookie', cursive;
   font-size: 3.5em;
 }
 
 .center-container {
-margin: 50px auto;
-width: 900px;
-padding: 10px 0;
-border: 1px dashed #488AC7;
-font-family: 'Roboto', sans-serif;
+  margin: 50px auto;
+  width: 900px;
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-wrapper {
+  background-color: #41a4cc;
+}
+/* unvisited link */
+a:link {
+    color: #f25e5e;
+}
+
+/* visited link */
+a:visited {
+    color: #f7e841;
+}
+
+/* mouse over link */
+a:hover {
+    color: #41a4cc;
+}
+
+nav a:link {
+  color: #FFFFFF;
+}
+
+nav a:visited {
+  color: #FFFFFF;
+}
+
+h2 {
+  font-family: 'Slabo 27px', serif;
+  color: #f25e5e;
 }
