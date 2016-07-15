@@ -92,16 +92,13 @@ h5.review-title {
 }
 
 span.commenter {
-  display:block;
-  position:absolute;
-  right:12%;
-  color:grey;
+  color:#4088cc;
 }
 
 p.comment {
-  width:80%;
-  margin-left:10%;
-  border-bottom:1px solid grey;
+  color:grey;
+  font-size: .8em;
+  border-bottom:1px dashed lightgrey;
 }
 
 // MOVIE SHOW VIEW

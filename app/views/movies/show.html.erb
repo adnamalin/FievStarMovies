@@ -18,7 +18,9 @@
       <p class="extra-info">Release on <%= @movie.release_date.strftime("%B, %d, %Y") %></p>
     </ul>
     <p><%= @movie.description %></p>
-    <%= link_to "Add Review", new_movie_review_path(@movie), :class => "review-link" %>
+    <% if logged_in? %>
+      <%= link_to "Add Review", new_movie_review_path(@movie), :class => "review-link" %>
+    <% end %>
   </div>
 
   <div class="poster-div col s3 pull-s7">

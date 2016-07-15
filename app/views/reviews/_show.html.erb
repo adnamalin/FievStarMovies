@@ -24,7 +24,7 @@
     <%= render "comments/index", comments: review.comments %>
   <% end %>
 
-  <% if current_user %>
+  <% if logged_in? %>
     <% if !authorized?(review.reviewer) %>
   	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> | <%= link_to "Add a comment", new_review_comment_path(review.id) %>
     <% end %>

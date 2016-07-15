@@ -1,6 +1,8 @@
-<div class="comment_container">
+<div class="comment_container row">
   <% comments.each do |comment| %>
-  <span class="commenter"><%= comment.commenter.username %></span>
-  <p class="comment"><%= comment.comment %></p>
-  <% end %>
+  <div class="col s12"></div>
+  <span class=" commenter col s1 push-s0"><%= comment.commenter.username %></span>
+  <p class="comment col s11 push-s0"><%= comment.comment %></p>
+</div>
+<% end %>
 </div>
