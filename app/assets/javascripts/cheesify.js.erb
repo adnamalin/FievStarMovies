@@ -5,9 +5,16 @@ $( document ).ready(function() {
 
     $("a.cheesy").on("click", function(event){
       event.preventDefault();
+      audioElement.play();
       $("body").toggleClass("cheesify");
       $("img.poster").toggleClass("cheesify");
-      audioElement.play();
+      // $(".center-container").children().each(function() {
+      //       $(this).html($(this).html().replace("Movies","Cheeses"));
+      //       $(this).html($(this).html().replace("movie","cheese"));
+      //       $(this).html($(this).html().replace("money","cheddar"));
+      //       $(this).html($(this).html().replace("star","(muen)star"));
+      //       $(this).html($(this).html().replace("good","gouda"));
+      //   });;
     });
 
 });
