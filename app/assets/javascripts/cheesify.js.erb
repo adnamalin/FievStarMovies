@@ -5,9 +5,9 @@ $( document ).ready(function() {
 
     $("a.cheesy").on("click", function(event){
       event.preventDefault();
-      $("body").css("background-image", "url('/assets/cheese.png')")
+      $("body").css("background-image", "url('<%= asset_path('cheese.png') %>')")
       // ("background-image", "asset-data-url('test.jpg')")
-      $(".poster").attr("src", '/assets/cheesy-poster.jpg')
+      $(".poster").attr("src", "<%= asset_path('cheesy-poster.jpg') %>")
       audioElement.play();
     });
 
