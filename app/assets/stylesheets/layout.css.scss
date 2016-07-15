@@ -27,27 +27,27 @@ body {
 }
 
 a.genre-tag:link {
-    color: white;
+  color: white;
 }
 
 a.genre-tag:visited  {
-    color: white;
+  color: white;
 }
 
 a.genre-tag:hover {
-    color: #f25e5e;
+  color: #f25e5e;
 }
 
 a:link {
-    color: #41a4cc;
+  color: #41a4cc;
 }
 
 a:visited {
-    color: #aad1e0;
+  color: #aad1e0;
 }
 
 a:hover {
-    color: #f25e5e;
+  color: #f25e5e;
 }
 
 nav a:link {
@@ -140,4 +140,32 @@ p.extra-info {
 
 .review-header {
   color: #aad1e0;
+}
+
+// SEARCH AND SORT AREA
+
+#filter {
+  vertical-align: top;
+  display: inline-block;
+  width: 15%;
+  margin-right: 100px;
+}
+
+#search-bar{
+  padding-top: 20px;
+  vertical-align: top;
+  margin-left: 20px;
+  display: inline-block;
+  width: 70%;
+}
+
+.search-input {
+  display: inline-block;
+  width: 60%;
+}
+
+.search-button {
+  margin-left: 30px;
+  display: inline-block;
+  width: 30%;
 }

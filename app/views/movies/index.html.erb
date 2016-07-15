@@ -1,15 +1,21 @@
 <h2>All  Movies<% if params[:genre] %> (<%= params[:genre] %>)<% end %></h2>
 
-<%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
-  <%= label_tag("Filter By Genre:") %>
-  <%= select_tag "genre", options_for_select(@genres) %>
-  <%= submit_tag "Filter" %>
-<% end %>
-<br>
-<%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
-  <%= submit_tag "Reset To All Genres" %>
-<% end %>
-
+<div id='sorting-searching'>
+  <div id="filter">
+  <%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
+    <%= label_tag("Filter By Genre:") %>
+    <%= select_tag "genre", options_for_select(@genres) %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+  <br>
+  <%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
+    <%= submit_tag "Reset To All Genres" %>
+  <% end %>
+  </div>
+  <div id="search-bar">
+  <%= render 'searches/form' %>
+  </div>
+</div>
 <div class="row">
   <%= render @movies %>
 </div>

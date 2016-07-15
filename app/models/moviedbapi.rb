@@ -8,7 +8,10 @@ class Moviedbapi
 
   def find_movie(id)
     response = HTTParty.get("#{@base_uri}/movie/#{id}?api_key=#{@api_key}")
-    movie = Movie.find_by(title:response.parsed_response["title"])
+     if response.parsed_response["release_date"] == ""
+        response.parsed_response["release_date"] = "1000-11-11"
+      end
+    movie = Movie.find_by(title:response.parsed_response["title"], release_date: response.parsed_response["release_date"])
     if !movie
       create_movie(response.parsed_response)
     else
@@ -17,11 +20,9 @@ class Moviedbapi
   end
 
   def search_movie(search_term)
-    #http://docs.themoviedb.apiary.io/#reference/search/searchmovie/get
-    response = HTTParty.get("#{@base_uri}/search//movie#{search_term}?api_key=#{@api_key}")
-    # returns collection of movies on that search term
-    # Only wany to make the request and make a movie object if user selects that movie
-    parse_search_into_link(response)
+    clean_search_term = sanitize_search_term(search_term)
+    response = HTTParty.get("#{@base_uri}/search/movie?query=#{clean_search_term}&api_key=#{@api_key}")
+    results = response.parsed_response["results"]
   end
 
   def image_link(poster_path)
@@ -73,4 +74,10 @@ class Moviedbapi
     response = HTTParty.get("#{@base_uri}/genre/#{id}?api_key=#{@api_key}")
     Genre.find_or_create_by(genre: response.parsed_response["name"])
   end
+
+  def sanitize_search_term(search_term)
+    cleaned = search_term.to_s.downcase.tr(" ", "+").chomp
+  end
+
+
 end
