@@ -15,7 +15,7 @@
   </span><br />
 
   <% if authorized?(review.reviewer) %>
-  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete%></span>
+  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
   <% end %>
   <p><%= review.body %></p>
 
@@ -25,9 +25,9 @@
   <% end %>
 
   <% if logged_in? %>
-    <% if !authorized?(review.reviewer) %>
-  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> | <%= link_to "Add a comment", new_review_comment_path(review.id) %>
-    <% end %>
+    <% if not_your_own(review.reviewer) && havent_rated_yet(review) %>
+  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> |<% end %> <%= link_to "Add a comment", new_review_comment_path(review.id) %>
+
   <% end %>
 
 </div>

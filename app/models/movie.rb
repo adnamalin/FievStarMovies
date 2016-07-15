@@ -4,7 +4,7 @@ class Movie < ActiveRecord::Base
   has_many :assignments
   has_many :genres, through: :assignments
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   validates :description, :release_date, presence: true
 
   def average_rating

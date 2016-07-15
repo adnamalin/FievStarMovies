@@ -12,4 +12,5 @@ module AuthenticationControllerHelper
   def logged_in_access
     redirect_to no_access_path unless logged_in?
   end
+
 end
