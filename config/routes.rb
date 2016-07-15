@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   get '/search' => 'searches#new'
   post '/search' => 'searches#create'
   get '/results' => 'searches#index', as: 'search_results'
-  get '/results/:mdb_id' => 'searches#create_selected_result', as: 'create_result'
+  get '/results/:mdb_id/:release_date' => 'searches#create_selected_result', as: 'create_result'
 end

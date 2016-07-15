@@ -8,7 +8,7 @@ class Moviedbapi
 
   def find_movie(id)
     response = HTTParty.get("#{@base_uri}/movie/#{id}?api_key=#{@api_key}")
-    movie = Movie.find_by(title:response.parsed_response["title"])
+    movie = Movie.find_by(title:response.parsed_response["title"], release_date: response.parsed_response["release_date"])
     if !movie
       create_movie(response.parsed_response)
     else
@@ -72,7 +72,7 @@ class Moviedbapi
   end
 
   def sanitize_search_term(search_term)
-    search_term.to_s.downcase.gsub!(" ", "+").chomp
+    cleaned = search_term.to_s.downcase.tr(" ", "+").chomp
   end
 
 

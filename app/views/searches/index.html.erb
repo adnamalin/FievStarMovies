@@ -2,6 +2,6 @@
 
 <ul>
   <% all_results.each do |result| %>
-    <li><%= link_to result[:title], create_result_path(result[:mdb_id]) %></li>
+    <li><%= link_to result[:title], create_result_path(result[:mdb_id],result[:release_date] ) %></li>
   <% end %>
 </ul>
