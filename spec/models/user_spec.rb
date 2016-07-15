@@ -2,7 +2,7 @@ describe User do
   let(:user) { User.create!(username:"vi", password: "1234") }
   let(:saved_user) { User.find_by(username:"vi") }
 
-  describe "has attributes" do 
+  describe "has attributes" do
     it "has a username" do
       expect(user.username).to eq saved_user.username
     end
@@ -27,13 +27,13 @@ describe User do
     end
 
     it "gets the average rating of the review" do
-      review.ratings = [Rating.new(rating:5), Rating.new(rating:4), Rating.new(rating:3), Rating.new(rating:4), Rating.new(rating:3), ]
+      review.ratings = [Rating.new(rating:5, rater_id:1), Rating.new(rating:4, rater_id:2), Rating.new(rating:3, rater_id:3), Rating.new(rating:4, rater_id:4), Rating.new(rating:3, rater_id:5) ]
       review.save
       expect(user.average_review_rating).to eq 3.8
     end
 
     it "trusted_reviewer? returns true if average reviewer rating > 3" do
-      review.ratings = [Rating.new(rating:5), Rating.new(rating:4), Rating.new(rating:3), Rating.new(rating:4), Rating.new(rating:3), ]
+      review.ratings =[Rating.new(rating:5, rater_id:1), Rating.new(rating:4, rater_id:2), Rating.new(rating:3, rater_id:3), Rating.new(rating:4, rater_id:4), Rating.new(rating:3, rater_id:5) ]
       review.save
       expect(user.trusted_reviewer?).to eq true
     end
