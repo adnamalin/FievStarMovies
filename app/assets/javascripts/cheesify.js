@@ -7,6 +7,7 @@ $( document ).ready(function() {
       event.preventDefault();
       $("body").css("background-image", "url('/assets/cheese.png')")
       // ("background-image", "asset-data-url('test.jpg')")
+      $(".poster").attr("src", '/assets/cheesy-poster.jpg')
       audioElement.play();
     });
 
