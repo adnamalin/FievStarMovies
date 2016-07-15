@@ -91,13 +91,23 @@ h5.review-title {
   font-weight: bold;
 }
 
+.individual_comment {
+  margin: 20px 0;
+}
+
 span.commenter {
   color:#4088cc;
+  font-size: .8em;
+  display: inline;
+  width: 10%;
 }
 
 p.comment {
+  display: inline-block;
+  width: 90%;
   color:grey;
   font-size: .8em;
+  margin-left: 30px;
   border-bottom:1px dashed lightgrey;
 }
 
