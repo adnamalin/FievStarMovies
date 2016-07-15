@@ -29,7 +29,11 @@ class SearchesController < ApplicationController
   def collect_results(response)
     all_results = []
     response.each do |r|
+      if r["release_date"] == ""
+        r["release_date"] = "0000-00-00"
+      end
       all_results << result = {title: r["title"], mdb_id: r["id"], release_date: r["release_date"]}
+      p r["release_date"]
     end
     all_results
   end

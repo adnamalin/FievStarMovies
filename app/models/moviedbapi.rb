@@ -8,6 +8,9 @@ class Moviedbapi
 
   def find_movie(id)
     response = HTTParty.get("#{@base_uri}/movie/#{id}?api_key=#{@api_key}")
+     if response.parsed_response["release_date"] == ""
+        response.parsed_response["release_date"] = "1000-11-11"
+      end
     movie = Movie.find_by(title:response.parsed_response["title"], release_date: response.parsed_response["release_date"])
     if !movie
       create_movie(response.parsed_response)
