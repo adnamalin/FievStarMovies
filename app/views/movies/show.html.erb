@@ -18,7 +18,7 @@
       <p class="extra-info">Release on <%= @movie.release_date.strftime("%B, %d, %Y") %></p>
     </ul>
     <p><%= @movie.description %></p>
-    <% if logged_in? %>
+    <% if logged_in? && havent_left_review_yet(@movie) %>
       <%= link_to "Add Review", new_movie_review_path(@movie), :class => "review-link" %>
     <% end %>
   </div>
