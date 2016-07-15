@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'assets/cheesy-sounds.mp3');
+    audioElement.setAttribute('src', <%= asset_path('cheesy-sounds.mp3') %>);
 
     $("a.cheesy").on("click", function(event){
       event.preventDefault();
