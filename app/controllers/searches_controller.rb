@@ -15,6 +15,9 @@ class SearchesController < ApplicationController
   end
 
   def create_selected_result
+    api = Moviedbapi.new
+    @movie = api.find_movie(params[:mdb_id])
+    redirect_to movie_path(@movie)
   end
 
   private
