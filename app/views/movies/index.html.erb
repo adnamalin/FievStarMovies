@@ -6,9 +6,12 @@
     <%= label_tag("Filter By Genre:") %>
     <%= select_tag :genre, options_for_select(@genres) %>
   <% end %>
-  <br>
+  <br><br>
   <%= form_tag(root_path, method: "get") do %>
-    <%= submit_tag "Reset To All Genres" %>
+    <button class="reset-button btn waves-effect waves-light red lighten-1" type="submit" name="Reset To All Genres">
+          <%= submit_tag "All Genres" %>
+      <i class="material-icons right">search</i>
+    </button>
   <% end %>
   </div>
   <div id="search-bar">
