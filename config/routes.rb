@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/404' => 'sessions#invalid', as: "no_access"
+
+  get '/search' => 'searches#new'
+  post '/search' => 'searches#create'
+  get '/results' => 'searches#index', as: 'search_results'
+  get '/results/:mdb_id' => 'searches#create_selected_result', as: 'create_result'
 end
