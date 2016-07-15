@@ -20,7 +20,7 @@
   <p><%= review.body %></p>
 
   <% if review.comments.count > 0 %>
-  	<h6>Comments:</h6>
+  	<h6>View Comments <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></h6>
     <%= render "comments/index", comments: review.comments %>
   <% end %>
 

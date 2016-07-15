@@ -95,16 +95,22 @@ h5.review-title {
   margin: 20px 0;
 }
 
+.chat-icon {
+  color:#4088cc;
+}
+
 span.commenter {
   color:#4088cc;
   font-size: .8em;
   display: inline;
   width: 10%;
+  vertical-align: top;
 }
 
 p.comment {
   display: inline-block;
   width: 90%;
+  vertical-align: top;
   color:grey;
   font-size: .8em;
   margin-left: 30px;
