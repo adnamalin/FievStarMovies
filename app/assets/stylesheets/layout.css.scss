@@ -3,6 +3,15 @@ body {
   background-repeat: repeat;
 }
 
+body.cheesify {
+  background-image: asset-data-url("cheese.png");
+  background-repeat: repeat;
+}
+
+img.cheesify{
+  content: asset-data-url("cheesy-poster.jpg")
+}
+
 #website-name{
   margin: 0 10px;
   margin-bottom: 20px;
@@ -76,6 +85,13 @@ h4 {
   margin: 0 auto;
 }
 
+#modal_login_container{
+  width:228px;
+  position: absolute;
+  top:55px;
+  right:10px;
+}
+
 div.individual_review {
   margin:0 50px;
   padding:10px;
@@ -127,7 +143,7 @@ p.comment {
 }
 
 .poster {
-  border: 1px dashed lightgrey;
+
 }
 
 p.extra-info {

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Movie do
   let(:movie_with_reviews_and_ratings) do
     movie = Movie.create!(title: "Star Trek", director: "Susie", description: "Space!", release_date: "1960-08-13")
-    3.times do
+    1.times do
       movie.ratings.create!(rating: 5)
     end
     movie
