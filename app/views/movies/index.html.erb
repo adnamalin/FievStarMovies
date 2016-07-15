@@ -4,11 +4,10 @@
   <div id="filter">
   <%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
     <%= label_tag("Filter By Genre:") %>
-    <%= select_tag "genre", options_for_select(@genres) %>
-    <%= submit_tag "Filter" %>
+    <%= select_tag :genre, options_for_select(@genres) %>
   <% end %>
   <br>
-  <%= form_tag(root_path, method: "get", id: "do-not-hide") do %>
+  <%= form_tag(root_path, method: "get") do %>
     <%= submit_tag "Reset To All Genres" %>
   <% end %>
   </div>

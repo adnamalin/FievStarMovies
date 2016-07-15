@@ -57,12 +57,15 @@ rating.save!
 review.ratings.create!(rating:4, rater_id:user2.id)
 review.ratings.create!(rating:3, rater_id:user3.id)
 review.ratings.create!(rating:4, rater_id:user4.id)
-review.ratings.create!(rating:2, rater_id:user3.id)
+
 review2.ratings.create!(rating:5, rater_id:user2.id)
 review2.ratings.create!(rating:5, rater_id:user3.id)
-review2.ratings.create!(rating:4, rater_id:user3.id)
+review2.ratings.create!(rating:4, rater_id:user4.id)
+
 review3.ratings.create!(rating:4, rater_id:user4.id)
+
 review4.ratings.create!(rating:3, rater_id:user3.id)
-review4.ratings.create!(rating:4, rater_id:user3.id)
+review4.ratings.create!(rating:4, rater_id:user2.id)
+
 review5.ratings.create!(rating:2, rater_id:user2.id)
 review5.ratings.create!(rating:1, rater_id:user4.id)
