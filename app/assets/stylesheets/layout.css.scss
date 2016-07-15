@@ -77,10 +77,18 @@ h4 {
 }
 
 div.individual_review {
-  margin:0 100px;
+  margin:0 50px;
   padding:10px;
-  border:1px dotted grey;
   position:relative;
+}
+
+h5.review-title {
+  font-size: 1.5em;
+  font-family: 'Slabo 27px', serif;
+}
+
+.reviewer {
+  font-weight: bold;
 }
 
 span.commenter {
@@ -115,4 +123,8 @@ p.extra-info {
 
 .chip {
   margin-bottom: 10px;
+}
+
+.review-header {
+  color: #aad1e0;
 }
