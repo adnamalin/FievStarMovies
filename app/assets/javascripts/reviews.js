@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $("#new_rating").on("submit", function(event){
+    $(".movie-review-form-page").on("submit", "#new_rating",function(event){
       event.preventDefault();
       var url= $(this).attr('action');
       var rating_data = $(this).serialize();

@@ -26,17 +26,26 @@ body {
   display: inline-block
 }
 
-/* unvisited link */
+a.genre-tag:link {
+    color: white;
+}
+
+a.genre-tag:visited  {
+    color: white;
+}
+
+a.genre-tag:hover {
+    color: #f25e5e;
+}
+
 a:link {
     color: #41a4cc;
 }
 
-/* visited link */
 a:visited {
     color: #aad1e0;
 }
 
-/* mouse over link */
 a:hover {
     color: #f25e5e;
 }
@@ -48,6 +57,7 @@ nav a:link {
 nav a:visited {
   color: #FFFFFF;
 }
+
 
 h2 {
   font-family: 'Slabo 27px', serif;
@@ -67,21 +77,67 @@ h4 {
 }
 
 div.individual_review {
-  margin:0 100px;
+  margin:0 50px;
   padding:10px;
-  border:1px dotted grey;
   position:relative;
 }
 
+h5.review-title {
+  font-size: 1.5em;
+  font-family: 'Slabo 27px', serif;
+}
+
+.reviewer {
+  font-weight: bold;
+}
+
+.individual_comment {
+  margin: 20px 0;
+}
+
+.chat-icon {
+  color:#4088cc;
+}
+
 span.commenter {
-  display:block;
-  position:absolute;
-  right:12%;
-  color:grey;
+  color:#4088cc;
+  font-size: .8em;
+  display: inline;
+  width: 10%;
+  vertical-align: top;
 }
 
 p.comment {
-  width:80%;
-  margin-left:10%;
-  border-bottom:1px solid grey;
+  display: inline-block;
+  width: 90%;
+  vertical-align: top;
+  color:grey;
+  font-size: .8em;
+  margin-left: 30px;
+  border-bottom:1px dashed lightgrey;
+}
+
+// MOVIE SHOW VIEW
+
+.movie-title-show {
+  font-size: 3em;
+  font-family: 'Slabo 27px', serif;
+  border-bottom: 1px solid #ef5350;
+  padding-bottom: 5px;
+}
+
+.poster {
+  border: 1px dashed lightgrey;
+}
+
+p.extra-info {
+  color: lightgrey;
+}
+
+.chip {
+  margin-bottom: 10px;
+}
+
+.review-header {
+  color: #aad1e0;
 }

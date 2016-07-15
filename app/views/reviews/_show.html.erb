@@ -1,19 +1,33 @@
 <div class="individual_review">
-  <h4><%= review.title %> | <%= Rating.find_by(rater_id: review.reviewer.id, rateable_type:"Movie", rateable_id: review.movie.id).rating %> Cheeses </h4>
-  <span class="reviewing_author"> Posted by <%= review.reviewer.username %></span><br />
-  <span class="review_rating">Review Rating: <%= review.average_rating %></span>
+  <h5 class="review-title"><%= review.title %>
+     <% Review.find(review.id).movie_rating.rating.times do |cheese| %>
+       <%= image_tag("Cheese-icon.png",  class: "logo", size: "20") %>
+     <% end %>
+  </h5>
+
+  <span class="reviewing_author">
+  <% if review.reviewer.trusted_reviewer? %>
+    <i class="tiny yellow-text material-icons">verified_user</i>
+    <span class="reviewer"><%= review.reviewer.username %></span> | <span class="review_rating">review rating: <%= review.average_rating %></span>
+  <% else %>
+    <span class="reviewer"><%= review.reviewer.username %></span> | <span class="review_rating">review rating: <%= review.average_rating %></span>
+  <% end %>
+  </span><br />
+
   <% if authorized?(review.reviewer) %>
   	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete%></span>
   <% end %>
   <p><%= review.body %></p>
 
   <% if review.comments.count > 0 %>
-  	<h6>Comments:</h6>
+  	<h6>View Comments <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></h6>
     <%= render "comments/index", comments: review.comments %>
   <% end %>
 
-  <% if current_user %>
-  	<%= link_to "Rate this review", new_review_rating_path(review.id) %> | <%= link_to "Add a comment", new_review_comment_path(review.id) %>
+  <% if logged_in? %>
+    <% if !authorized?(review.reviewer) %>
+  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> | <%= link_to "Add a comment", new_review_comment_path(review.id) %>
+    <% end %>
   <% end %>
 
 </div>
