@@ -1,13 +1,13 @@
 $( document ).ready(function() {
 
   var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', 'assets/cheesy-sounds.mp3');
+    // audioElement.setAttribute('src', 'assets/cheesy-sounds.mp3');
+    audioElement.setAttribute('src', "<%= asset_path('cheesy-sounds.mp3') %>");
 
     $("a.cheesy").on("click", function(event){
       event.preventDefault();
-      $("body").css("background-image", "url('<%= asset_path('cheese.png') %>')")
-      // ("background-image", "asset-data-url('test.jpg')")
-      $(".poster").attr("src", "<%= asset_path('cheesy-poster.jpg') %>")
+      $("body").toggleClass("cheesify");
+      $("img.poster").toggleClass("cheesify");
       audioElement.play();
     });
 

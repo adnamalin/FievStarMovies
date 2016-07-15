@@ -3,6 +3,15 @@ body {
   background-repeat: repeat;
 }
 
+body.cheesify {
+  background-image: asset-data-url("cheese.png");
+  background-repeat: repeat;
+}
+
+img.cheesify{
+  content: asset-data-url("cheesy-poster.jpg")
+}
+
 #website-name{
   margin: 0 10px;
   margin-bottom: 20px;
