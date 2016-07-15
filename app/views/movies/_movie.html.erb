@@ -1,11 +1,14 @@
-<div class="card">
+<div class="card col s6">
   <div class="card-image waves-effect waves-block waves-light row valign-wrapper">
     <!-- <img class="activator" src="images/office.jpg"> -->
   </div>
   <div class="card-content">
+    <div class="poster-div">
+      <% api = Moviedbapi.new %>
+      <%= image_tag(api.image_link(movie.poster),  class: "poster", size: "120x160") %>
+    </div>
     <span class="card-title activator grey-text text-darken-4"> <%= link_to movie.title, movie %><i class="material-icons right">more_vert</i></span>
     <p>Genres: <%= movie.display_genres %> </p>
-    <p>Director: <%= movie.director %></p>
     <p><%= movie.number_of_reviews %> Reviews | <%= movie.average_rating %> Average Cheeses</p></p>
   </div>
   <div class="card-reveal">

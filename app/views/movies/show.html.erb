@@ -24,7 +24,8 @@
   </div>
 
   <div class="poster-div col s3 pull-s7">
-    <%= image_tag("example_poster.jpg",  class: "poster", size: "200x240") %>
+    <% api = Moviedbapi.new %>
+    <%= image_tag(api.image_link(@movie.poster),  class: "poster", size: "180x240") %>
   </div>
 
   <div class="movie_reviews col s12">

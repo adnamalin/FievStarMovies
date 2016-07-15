@@ -33,7 +33,6 @@ class Moviedbapi
       results.each do |result|
         create_movie_from_top_rated(result)
       end
-      sleep(10)
     end
   end
 
@@ -62,6 +61,8 @@ class Moviedbapi
     genre_ids.each do |genre_id|
       movie.genres << create_genre(genre_id)
     end
+    p "sleeping for 1..."
+    sleep(1)
     movie.save!
     movie
   end
