@@ -15,7 +15,7 @@
   </span><br />
 
   <% if authorized?(review.reviewer) %>
-  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete%></span>
+  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
   <% end %>
   <p><%= review.body %></p>
 

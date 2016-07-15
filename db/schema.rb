@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714135209) do
+ActiveRecord::Schema.define(version: 20160715125342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160714135209) do
     t.integer "genre_id"
     t.integer "movie_id"
   end
+
+  add_index "assignments", ["genre_id"], name: "index_assignments_on_genre_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
