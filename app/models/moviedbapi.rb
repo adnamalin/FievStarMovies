@@ -16,6 +16,14 @@ class Moviedbapi
     end
   end
 
+  def search_movie(search_term)
+    #http://docs.themoviedb.apiary.io/#reference/search/searchmovie/get
+    response = HTTParty.get("#{@base_uri}/search//movie#{search_term}?api_key=#{@api_key}")
+    # returns collection of movies on that search term
+    # Only wany to make the request and make a movie object if user selects that movie
+    parse_search_into_link(response)
+  end
+
   def image_link(poster_path)
     "http://image.tmdb.org/t/p/w500/#{poster_path}"
   end
