@@ -10,7 +10,9 @@
   <%= submit_tag "Reset To All Genres" %>
 <% end %>
 
-<%= render @movies %>
+<div class="row">
+  <%= render @movies %>
+</div>
 
 <div class="apple_pagination">
   <%= will_paginate @movies %>

@@ -22,9 +22,13 @@ class Review < ActiveRecord::Base
   end
 
   def average_rating
-    ratings = self.ratings.map { |rating| rating.rating }
-    average = ratings.reduce(:+).to_f/ratings.length
-    average.round(2)
+    if !ratings.empty?
+      ratings = self.ratings.map { |rating| rating.rating }
+      average = ratings.reduce(:+).to_f/ratings.length
+      average.round(2)
+    else
+      "Not rated yet"
+    end
   end
 
   private
