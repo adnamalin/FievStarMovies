@@ -26,17 +26,26 @@ body {
   display: inline-block
 }
 
-/* unvisited link */
+a.genre-tag:link {
+    color: white;
+}
+
+a.genre-tag:visited  {
+    color: white;
+}
+
+a.genre-tag:hover {
+    color: #f25e5e;
+}
+
 a:link {
     color: #41a4cc;
 }
 
-/* visited link */
 a:visited {
     color: #aad1e0;
 }
 
-/* mouse over link */
 a:hover {
     color: #f25e5e;
 }
@@ -48,6 +57,7 @@ nav a:link {
 nav a:visited {
   color: #FFFFFF;
 }
+
 
 h2 {
   font-family: 'Slabo 27px', serif;
@@ -92,8 +102,17 @@ p.comment {
   font-size: 3em;
   font-family: 'Slabo 27px', serif;
   border-bottom: 1px solid #ef5350;
+  padding-bottom: 5px;
 }
 
 .poster {
   border: 1px dashed lightgrey;
+}
+
+p.extra-info {
+  color: lightgrey;
+}
+
+.chip {
+  margin-bottom: 10px;
 }

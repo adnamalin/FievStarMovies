@@ -4,14 +4,20 @@
   </div>
   <div class="card-content row">
     <div class="col s7 push-s3">
-      <div class="movie-title-show red-text lighten-1"><%= @movie.title %>
+      <h3 class="movie-title-show red-text lighten-1"><%= @movie.title %>
         <% @movie.average_rating.times do %>
         <%= image_tag("Cheese-icon.png",  class: "logo", size: "40") %>
         <% end %>
-      </div><br />
-      <p>Release on <%= @movie.release_date.strftime("%B, %d, %Y") %></p>
+      </h3>
+      <p class="extra-info">
+        <% @movie.genres.each do |genre|%>
+          <div class="chip">
+            <%= link_to genre.genre, movies_path(@movie, genre: genre.genre), :class => 'genre-tag' %></div>
+        <% end %>
+      </p>
+      <p class="extra-info">Release on <%= @movie.release_date.strftime("%B, %d, %Y") %></p>
     </ul>
-    <p><%= @movie.description %></p><br />
+    <p><%= @movie.description %></p>
     <%= link_to "Add Review", new_movie_review_path(@movie), :class => "review-link" %>
   </div>
 
