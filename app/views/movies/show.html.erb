@@ -2,24 +2,25 @@
   <div class="card-image waves-effect waves-block waves-light row valign-wrapper">
     <!-- <img class="activator" src="images/office.jpg"> -->
   </div>
-  <div class="card-content">
-    <div id="title_rating"> <!-- Movie Title and Rating -->
-      <ul>
-        <li><h1><%= @movie.title %></h1></li>
-        <li><h3>Average Rating: <%= @movie.average_rating %></h3></li>
-      </ul>
-    </div>
-    <div id="content">
-      <ul id="date_director">
-        <li><%= @movie.release_date %></li>
-        <li><%= @movie.director %> </li>
-      </ul>
-      <p><%= @movie.description %></p>
-      <%= link_to "Add Review", new_movie_review_path(@movie) %>
-    </div>
-
-    <div class="movie_reviews">
-      <%= render "reviews/index", reviews: @movie.reviews %>
-    </div>
+  <div class="card-content row">
+    <div class="col s7 push-s3">
+      <div class="movie-title-show red-text lighten-1"><%= @movie.title %>
+        <% @movie.average_rating.times do %>
+        <%= image_tag("Cheese-icon.png",  class: "logo", size: "40") %>
+        <% end %>
+      </div><br />
+      <p>Release on <%= @movie.release_date.strftime("%B, %d, %Y") %></p>
+    </ul>
+    <p><%= @movie.description %></p><br />
+    <%= link_to "Add Review", new_movie_review_path(@movie), :class => "review-link" %>
   </div>
+
+  <div class="col s3 pull-s7">
+    <%= image_tag("example_poster.jpg",  class: "poster", size: "200x240") %>
+  </div>
+
+  <div class="movie_reviews col s12">
+    <%= render "reviews/index", reviews: @movie.reviews %>
+  </div>
+</div>
 </div>

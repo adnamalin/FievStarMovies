@@ -32,6 +32,7 @@ class Moviedbapi
   end
 
   private
+  #didn't pull out director
   def create_movie(response)
     movie = Movie.new(title: response["title"],
       release_date: response["release_date"],

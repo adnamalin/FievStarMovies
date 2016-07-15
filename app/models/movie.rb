@@ -15,7 +15,7 @@ class Movie < ActiveRecord::Base
       self.ratings.each do |rat|
         total += rat.rating
       end
-      (total/number_of_ratings).to_f
+      (total/number_of_ratings).to_f.to_i
     end
   end
 
