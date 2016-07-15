@@ -32,6 +32,7 @@ class Moviedbapi
     5.times do |x|
       response = HTTParty.get("#{@base_uri}/movie/top_rated?page=#{x+1}&api_key=#{@api_key}")
       results = response.parsed_response["results"]
+      p response
       results.each do |result|
         create_movie_from_top_rated(result)
       end
