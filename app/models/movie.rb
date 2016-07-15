@@ -12,7 +12,6 @@ class Movie < ActiveRecord::Base
       return 0
     else
       total = 0
-      p ratings
       self.ratings.each do |rat|
         total += rat.rating
       end
