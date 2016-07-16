@@ -20,7 +20,7 @@
   <p><%= review.body %></p>
 
   <div class="comment_container">
-  	<span> <%= link_to 'View Comments', movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></span>
+  	<span> <%= link_to "#{review.comments.count} Comments", movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></span>
     <div class="comment-list" style="display: none">
       <% if review.comments.count > 0 %>
         <%= render "comments/index", comments: review.comments %>
