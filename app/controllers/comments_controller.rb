@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+
   def new
     logged_in_access
     @review = Review.find(params[:review_id])
     @comment = Comment.new
+    render template: 'comments/_form', layout: false
   end
 
   def create
@@ -11,7 +13,7 @@ class CommentsController < ApplicationController
       comment: params[:comment][:comment], review_id: params[:review_id])
     if comment.save!
       movie = Review.find(params[:review_id]).movie
-      redirect_to movie_path(movie.id)
+      render template: 'comments/_show', layout: false, locals: {comment: comment}
     end
   end
 end

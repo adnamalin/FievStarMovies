@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  respond_to :html, :js
 
   def new
     @movie = Movie.find(params[:movie_id])

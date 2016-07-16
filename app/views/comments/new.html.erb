@@ -1,12 +1,3 @@
 <%= link_to "Back", movie_path(@review.movie.id) %>
 
-<%= form_for [@review, @comment] do |f|%>
-<div>
-  <%= f.label :comment, "Add Comment:" %>
-  <%= f.text_area :comment %>
-</div>
-
-<div>
-  <button class="btn waves-effect waves-light red lighten-1" type="submit" name="Add Comment!">Add Comment!</button>
-</div>
-<% end %>
+<%= render 'form' %>

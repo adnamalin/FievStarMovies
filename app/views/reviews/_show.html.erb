@@ -19,14 +19,17 @@
   <% end %>
   <p><%= review.body %></p>
 
-  <% if review.comments.count > 0 %>
   	<h6>View Comments <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></h6>
-    <%= render "comments/index", comments: review.comments %>
-  <% end %>
+    <div class="comment_container">
+      <% if review.comments.count > 0 %>
+        <%= render "comments/index", comments: review.comments %>
+      <% end %>
+    </div>
 
   <% if logged_in? %>
     <% if not_your_own(review.reviewer) && havent_rated_yet(review) %>
-  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> |<% end %> <%= link_to "Add a comment", new_review_comment_path(review.id) %>
+  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> |<% end %> <%= link_to "Add a comment", new_review_comment_path(review.id), class: 'add-comment-link' %>
+      <div class='comment-form' style="display: none"></div>
 
   <% end %>
 
