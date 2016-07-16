@@ -19,12 +19,14 @@
   <% end %>
   <p><%= review.body %></p>
 
-  	<h6>View Comments <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></h6>
-    <div class="comment_container">
+  <div class="comment_container">
+  	<p> <%= link_to 'View Comments', movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></p>
+    <div class="comment-list" style="display: none">
       <% if review.comments.count > 0 %>
         <%= render "comments/index", comments: review.comments %>
       <% end %>
     </div>
+  </div>
 
   <% if logged_in? %>
     <% if not_your_own(review.reviewer) && havent_rated_yet(review) %>

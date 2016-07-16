@@ -15,6 +15,7 @@ $( document ).ready(function() {
       var $clickedLink = $(this);
       var url = $(this).attr('href');
       $.get(url, function(response){
+        $clickedLink.hide();
         $clickedLink.siblings('div.comment-form').html(response);
         $clickedLink.siblings('div.comment-form').slideToggle("slow");
       })
@@ -28,8 +29,15 @@ $( document ).ready(function() {
       $.post(url, comment_data, function(response){
         $clickedSubmit.hide("slow");
         $clickedSubmit.empty();
-        $clickedSubmit.parent().siblings('div.comment_container').append(response);
+        $clickedSubmit.parent().siblings('div.comment_container').children('div.comment-list').append(response);
+        $clickedSubmit.parent().siblings('.add-comment-link').show();
 
       });
     });
+
+    $('.view-comment').on("click", function(e){
+      e.preventDefault();
+      $(this).parent().siblings('div.comment-list').toggle("slow");
+    })
+
 });
