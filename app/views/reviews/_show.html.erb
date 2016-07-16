@@ -13,7 +13,7 @@
     <span class="reviewer"><%= review.reviewer.username %></span> | <span class="review_rating">review rating: <%= review.average_rating %></span>
   <% end %>
   <% if authorized?(review.reviewer) %>
-    <span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
+    <span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete %></span>
   <% end %>
   </span><br />
 
