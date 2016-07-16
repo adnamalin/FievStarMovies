@@ -12,15 +12,15 @@
   <% else %>
     <span class="reviewer"><%= review.reviewer.username %></span> | <span class="review_rating">review rating: <%= review.average_rating %></span>
   <% end %>
+  <% if authorized?(review.reviewer) %>
+    <span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
+  <% end %>
   </span><br />
 
-  <% if authorized?(review.reviewer) %>
-  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
-  <% end %>
   <p><%= review.body %></p>
 
   <div class="comment_container">
-  	<p> <%= link_to 'View Comments', movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></p>
+  	<span> <%= link_to 'View Comments', movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></span>
     <div class="comment-list" style="display: none">
       <% if review.comments.count > 0 %>
         <%= render "comments/index", comments: review.comments %>
