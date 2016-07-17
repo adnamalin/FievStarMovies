@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  respond_to :html, :js
 
   def new
     @movie = Movie.find(params[:movie_id])
@@ -17,6 +16,7 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = Review.find(params[:id])
     @review.destroy
+    redirect_to @movie
   end
 
   private

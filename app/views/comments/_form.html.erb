@@ -1,0 +1,10 @@
+<%= form_for [@review, @comment], id: "new-comment-form" do |f|%>
+<div>
+  <%= f.label :comment, "Add Comment:" %>
+  <%= f.text_area :comment, class: 'materialize-textarea', rows: "2"%>
+</div>
+
+<div>
+  <button class="btn waves-effect waves-light red lighten-1" type="submit" name="Add Comment!">Add Comment!</button>
+</div>
+<% end %>

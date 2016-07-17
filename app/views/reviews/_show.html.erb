@@ -12,21 +12,26 @@
   <% else %>
     <span class="reviewer"><%= review.reviewer.username %></span> | <span class="review_rating">review rating: <%= review.average_rating %></span>
   <% end %>
+  <% if authorized?(review.reviewer) %>
+    <span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), method: :delete %></span>
+  <% end %>
   </span><br />
 
-  <% if authorized?(review.reviewer) %>
-  	<span class="delete_link"><%= link_to "Delete", movie_rating_path(review.movie.id, review.id), remote: true, method: :delete%></span>
-  <% end %>
   <p><%= review.body %></p>
 
-  <% if review.comments.count > 0 %>
-  	<h6>View Comments <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></h6>
-    <%= render "comments/index", comments: review.comments %>
-  <% end %>
+  <div class="comment_container">
+  	<span> <%= link_to "#{review.comments.count} Comments", movie_path(review.movie), class: 'view-comment' %> <i class="tiny blue-text material-icons chat-icon">chat_bubble</i></span>
+    <div class="comment-list" style="display: none">
+      <% if review.comments.count > 0 %>
+        <%= render "comments/index", comments: review.comments %>
+      <% end %>
+    </div>
+  </div>
 
   <% if logged_in? %>
     <% if not_your_own(review.reviewer) && havent_rated_yet(review) %>
-  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> |<% end %> <%= link_to "Add a comment", new_review_comment_path(review.id) %>
+  	  <%= link_to "Rate this review", new_review_rating_path(review.id) %> |<% end %> <%= link_to "Add a comment", new_review_comment_path(review.id), class: 'add-comment-link' %>
+      <div class='comment-form' style="display: none"></div>
 
   <% end %>
 
