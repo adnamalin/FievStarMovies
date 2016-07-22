@@ -11,7 +11,25 @@
 [Watch Demo!](https://drive.google.com/file/d/0BwhMC8fspCz7dk5NeEtvRlBFVnM/view)
 
 ## Project Description
-
-## How to Install Locally
+This was a simulated client project done over the course of two days at Devbootcamp. The client requested a review site that was based on Fievel from An American Tail. Built on combining the best parts of IMDB, Rotten Tomatoes, and Yelp; the client wanted to create a site that helped avid movie fans decide what to watch next. 
 
 ## App Features 
+* Reviews on Movies
+  * Trusted Reviews features more prominently
+* Comments on Reviews
+  * To allow for discussion of review points  
+* Rating Movies & Reviews 
+* Searchable & Filterable Movies
+* Trustability Status on Users
+* User creation
+
+## Tech Stack
+* Ruby on Rails
+* JS/JQuery
+* Materialize 
+* PostgreSQL
+* Travis CI (95%+ test coverage)
+* Deployed on Heroku
+
+## Thanks To
+* [The Movie Database API](https://www.themoviedb.org/)
