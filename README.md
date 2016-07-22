@@ -8,6 +8,8 @@
 * Susie O'Brien [@susancal](https://github.com/susancal)
 * Vivien Kuo [@viKuo](https://github.com/viKuo)
 
+[Watch Demo!](https://drive.google.com/file/d/0BwhMC8fspCz7dk5NeEtvRlBFVnM/view)
+
 ## Project Description
 
 ## How to Install Locally
