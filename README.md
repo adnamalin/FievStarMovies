@@ -11,8 +11,7 @@
 ## Demo
 [fievstarmovies.herokuapp.com](fievstarmovies.herokuapp.com) | [Watch Demo!](https://drive.google.com/file/d/0BwhMC8fspCz7dk5NeEtvRlBFVnM/view)
 
-![screenshot1](http://i.imgur.com/vlj8KDd.jpg)
-![screenshot1](http://i.imgur.com/1SbLqLf.png)
+![screenshot1](http://i.imgur.com/83io7lr.png) ![screenshot1](http://i.imgur.com/wn4lHXy.png)
 
 ## Project Description
 This was a simulated client project done over the course of two days at Devbootcamp. The client requested a review site that was based on Fievel from An American Tail. Built on combining the best parts of IMDB, Rotten Tomatoes, and Yelp; the client wanted to create a site that helped avid movie fans decide what to watch next. 
