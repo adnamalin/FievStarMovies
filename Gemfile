@@ -31,7 +31,7 @@ gem 'will_paginate', '~> 3.0.5'
 
 # Use HTTParty to make API get requests
 gem 'httparty'
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use Unicorn as the app server
 # gem 'unicorn'
 
