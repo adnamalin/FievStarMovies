@@ -2,7 +2,7 @@ require 'httparty'
 
 class Moviedbapi
   def initialize
-    @api_key = "c53f45afaec37433217a385a706e45f1"
+    @api_key = ENV['MOVIE_DB_KEY']
     @base_uri = "http://api.themoviedb.org/3"
   end
 
